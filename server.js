@@ -2,6 +2,8 @@ const express = require('express')
 const moment = require('moment')
 const app = express()
 
+var port = process.env.PORT || 8080;
+
 app.get('/:date', function (req, res) {
     var parsed = null;
     if (req.params.date.match(/^\d+$/)) {
@@ -19,6 +21,6 @@ app.get('/:date', function (req, res) {
     }
 })
 
-app.listen(8080, function () {
+app.listen(port, function () {
   console.log('Timestamp service listening on port 8080!')
 })
